@@ -4,20 +4,22 @@
     {
         static void Main(string[] args)
         {
-            Comparison comparision = new Comparison(1, 3, 5, 8);
-            double line1 = comparision.CalculateLength();
+            Comparison comparison = new Comparison(1, 2, 3, 4);
+            double line1 = comparison.CalculateLength();
             Console.WriteLine("Length of first line " + line1);
-            Comparison LineComparision = new Comparison(5, 6, 8, 9);
-            double line2 = LineComparision.CalculateLength();
+            Comparison LineComparison = new Comparison(5, 8, 9, 10);
+            double line2 = LineComparison.CalculateLength();
             Console.WriteLine("Length of second line " + line2);
-            if (line1 == line2)
+            if (line1.CompareTo(line2) == 0)
             {
-                Console.WriteLine("line1 is equal to line2");
+                Console.WriteLine("Both lines are equal");
+                return;
             }
+
+            if (line1.CompareTo(line2) > 0)
+                Console.WriteLine("Line 1 is greater than line 2");
             else
-            {
-                Console.WriteLine("line1 is not equal to line2");
-            }
+                Console.WriteLine("Line 2 is greater than line 1");
         }
     }
 }
